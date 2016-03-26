@@ -8,11 +8,14 @@ module RoverChallenge
 
     attr_reader :plateau, :rover
 
+    # @param [RoverChallenge::Plateau] plateau
+    # @param [RoverChallenge::Rover] rover
     def initialize(plateau, rover)
       @plateau = plateau
       @rover = rover
     end
 
+    # @param [Array<String>] commands
     def execute(commands)
       commands.each(&method(:execute_command))
     end

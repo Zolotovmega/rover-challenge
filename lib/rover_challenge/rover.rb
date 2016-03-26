@@ -2,6 +2,13 @@ module RoverChallenge
   class Rover
     attr_reader :point, :navigation
 
+    # @param [RoverChallenge::Point] point
+    # @param [
+    #   RoverChallenge::Navigation::North,
+    #   RoverChallenge::Navigation::East,
+    #   RoverChallenge::Navigation::South,
+    #   RoverChallenge::Navigation::West,
+    # ] point
     def initialize(point, navigation)
       @point = point
       @navigation = navigation

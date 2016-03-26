@@ -1,6 +1,7 @@
 module RoverChallenge
   module Navigation
     class North
+      # @param [RoverChallenge::Point] position
       def self.move(position)
         position.y += 1
       end
@@ -19,6 +20,7 @@ module RoverChallenge
     end
 
     class East
+      # @param [RoverChallenge::Point] position
       def self.move(position)
         position.x += 1
       end
@@ -37,6 +39,7 @@ module RoverChallenge
     end
 
     class South
+      # @param [RoverChallenge::Point] position
       def self.move(position)
         position.y -= 1
       end
@@ -55,6 +58,7 @@ module RoverChallenge
     end
 
     class West
+      # @param [RoverChallenge::Point] position
       def self.move(position)
         position.x -= 1
       end
