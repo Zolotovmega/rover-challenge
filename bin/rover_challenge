@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'rover_challenge'
+
+file = File.open(ARGV.first, "r")
+
+plateau = RoverChallenge.build_plateau(file.readline)
+
+while !file.eof? do
+  begin
+    rover = RoverChallenge.build_rover(file.readline)
+    commands = RoverChallenge.build_commands(file.readline)
+
+    command_center = RoverChallenge::ControlCenter.new(plateau, rover)
+    command_center.execute(commands)
+
+    puts rover.to_s
+  rescue ArgumentError, RuntimeError => e
+    puts e
+  end
+end
