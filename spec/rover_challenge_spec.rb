@@ -24,4 +24,25 @@ describe RoverChallenge do
       end
     end
   end
+
+  describe ".build_plateau" do
+    let(:input) { "5 5" }
+    subject { described_class.build_plateau(input) }
+
+    it { is_expected.to be_an_instance_of(RoverChallenge::Plateau) }
+
+    it "parses plateau coordinates" do
+      expect(subject.min_x).to eq(0)
+      expect(subject.min_y).to eq(0)
+      expect(subject.max_x).to eq(5)
+      expect(subject.max_y).to eq(5)
+    end
+
+    context "when input is invalid" do
+      let(:input) { "invalid" }
+      it "raises ArgumentError exception" do
+        expect { subject }.to raise_error(ArgumentError)
+      end
+    end
+  end
 end
